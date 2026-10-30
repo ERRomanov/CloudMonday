@@ -7,7 +7,7 @@
 
 | Участник | GitHub |
 |----------|--------|
-| Романов Егор | [@username](https://github.com/ERRomanov) |
+| Романов Егор | [@ERRomanov](https://github.com/ERRomanov) |
 | Марьёв Егор | [@username](https://github.com/username) |
 
 ## Лабораторные работы
