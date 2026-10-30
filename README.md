@@ -17,15 +17,3 @@
 | 1 | nginx | [lab1](./lab1) | [Отчёт](./lab1/report.pdf) | В работе |
 | 2 | Docker | [lab2](./lab2) | [Отчёт](./lab2/report.pdf) | Не начата |
 | 3 | CI/CD | [lab3](./lab3) | [Отчёт](./lab3/report.pdf) | Не начата |
-
-## Структура репозитория
-
-```
-.
-├── lab0-dev/
-│   └── cloud-lab/      # приложение «Заметки»
-├── lab1/
-├── lab2/
-├── lab3/
-└── README.md
-```
