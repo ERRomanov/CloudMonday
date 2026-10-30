@@ -13,7 +13,7 @@
 
 | № | Тема | Код | Отчёт | Статус |
 |---|------|-----|-------|--------|
-| 0 | Приложение «Заметки»: бэкенд (Flask), фронтенд, база данных (PostgreSQL) как отдельный сервис | [lab0-dev/cloud-lab](./cloud-lab0) | [Отчёт](./cloud-lab0/report.pdf) | Выполнена |
-| 1 | nginx | [lab1](./lab1) | [Отчёт](./lab1/report.pdf) | В работе |
-| 2 | Docker | [lab2](./lab2) | [Отчёт](./lab2/report.pdf) | Не начата |
-| 3 | CI/CD | [lab3](./lab3) | [Отчёт](./lab3/report.pdf) | Не начата |
+| 0 | Приложение «Заметки»: бэкенд (Flask), фронтенд, база данных (PostgreSQL) как отдельный сервис | [cloud-lab0](./cloud-lab0) | [Отчёт](./cloud-lab0/report.pdf) | Выполнена |
+| 1 | nginx | [cloud-lab1](./cloud-lab1) | [Отчёт](./cloud-lab1/report.pdf) | В работе |
+| 2 | Docker | [cloud-lab2](./cloud-lab02) | [Отчёт](./cloud-lab2/report.pdf) | Не начата |
+| 3 | CI/CD | [cloud-lab3](./cloud-lab03) | [Отчёт](./cloud-lab3/report.pdf) | Не начата |
