@@ -7,7 +7,7 @@
 | Участник | GitHub |
 |----------|--------|
 | Романов Егор | [@ERRomanov](https://github.com/ERRomanov) |
-| Марьёв Егор | [@username](https://github.com/username) |
+| Марьёв Егор | [@flofyxx](https://github.com/flofyxx) |
 
 ## Лабораторные работы
 
