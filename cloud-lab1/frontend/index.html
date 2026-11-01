@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Заметки</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 600px; margin: 40px auto; padding: 0 16px; color: #222; }
+    h1 { margin-bottom: 4px; }
+    #status { font-size: 14px; margin-bottom: 20px; }
+    .ok { color: #2a7a2a; }
+    .err { color: #b00020; }
+    form { display: flex; gap: 8px; margin-bottom: 20px; }
+    input { flex: 1; padding: 8px; font-size: 16px; }
+    button { padding: 8px 16px; font-size: 16px; cursor: pointer; }
+    ul { list-style: none; padding: 0; }
+    li { padding: 10px; border-bottom: 1px solid #ddd; }
+    li small { color: #777; display: block; }
+  </style>
+</head>
+<body>
+  <h1>Заметки</h1>
+  <div id="status">Проверяю бэкенд…</div>
+
+  <form id="form">
+    <input id="text" placeholder="Новая заметка" required autocomplete="off">
+    <button type="submit">Добавить</button>
+  </form>
+
+  <ul id="list"></ul>
+
+  <script>
+    // Фронт и API на одном хосте
+    const API = "/api";
+
+    const statusEl = document.getElementById("status");
+    const listEl = document.getElementById("list");
+    const formEl = document.getElementById("form");
+    const textEl = document.getElementById("text");
+
+    // Показываем, какой экземпляр бэкенда
+    async function checkHealth() {
+      try {
+        const r = await fetch(API + "/health");
+        const d = await r.json();
+        if (r.ok) {
+          statusEl.textContent = "Бэкенд и база доступны. Ответил: " + d.instance;
+          statusEl.className = "ok";
+        } else {
+          statusEl.textContent = "База недоступна: " + d.detail;
+          statusEl.className = "err";
+        }
+      } catch (e) {
+        statusEl.textContent = "Бэкенд недоступен";
+        statusEl.className = "err";
+      }
+    }
+
+    async function loadNotes() {
+      try {
+        const r = await fetch(API + "/notes");
+        const notes = await r.json();
+        listEl.innerHTML = "";
+        for (const n of notes) {
+          const li = document.createElement("li");
+          li.textContent = n.text;
+          const small = document.createElement("small");
+          small.textContent = new Date(n.created_at).toLocaleString("ru-RU");
+          li.appendChild(small);
+          listEl.appendChild(li);
+        }
+      } catch (e) {
+        listEl.innerHTML = "<li class='err'>Не удалось загрузить заметки</li>";
+      }
+    }
+
+    formEl.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = textEl.value.trim();
+      if (!text) return;
+      await fetch(API + "/notes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+      });
+      textEl.value = "";
+      loadNotes();
+    });
+
+    checkHealth();
+    loadNotes();
+    setInterval(checkHealth, 3000);
+  </script>
+</body>
+</html>
