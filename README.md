@@ -15,5 +15,5 @@
 |---|------|-----|-------|--------|
 | 0 | Приложение «Заметки»: бэкенд (Flask), фронтенд, база данных (PostgreSQL) как отдельный сервис | [cloud-lab0](./cloud-lab0) | [Отчёт](./cloud-lab0/report.pdf) | Выполнена |
 | 1 | nginx | [cloud-lab1](./cloud-lab1) | [Отчёт](./cloud-lab1/report-lab1.pdf) | Выполнена |
-| 2 | Docker | [cloud-lab2](./cloud-lab02) | [Отчёт](./cloud-lab2/report.pdf) | Не начата |
+| 2 | Docker | [cloud-lab2](./cloud-lab02) | [Отчёт](./cloud-lab2/report.pdf) | В работе |
 | 3 | CI/CD | [cloud-lab3](./cloud-lab03) | [Отчёт](./cloud-lab3/report.pdf) | Не начата |
